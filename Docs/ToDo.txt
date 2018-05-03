@@ -1,0 +1,103 @@
+Scions of Channeling
+To do:
+
+Implementation:
+Add Scrolls 								- Done!
+Add Healing Spell 							- Done!
+Add Enemy spells 							- Done!
+Add Status Effects 							- Done!
+Be able to sell items 						- Done!
+Add Monster Loot 							- Done!
+Regen Spell 								- Done!
+Dispell Spell 								- Done!
+Corruption Spell 							- Done!
+Dynamic Spell Numbering, spell class? 		- Done!
+Drain Life Spell 							- Done!
+AoE Spells 									- Done!
+ID system to all classes 					- Done!
+Individual Enemy Attack Descriptions 		- Done!
+Create common ITEM class 					- Done!
+Spell Tomes 								- Done!
+Add followers 								- Done!
+Inspect Battle Option 						- Done!
+Be able to heal followers					- Done!
+Replace function when inventory is full 	- Done!
+Enemy descriptions							- Done!
+Add a combat variable to spells				- Done!
+Magic Defense								- Done!
+Revise drop system							- Done!
+Multiple save files							- Done!
+Rewrite Hadgar Dialogue						- Done!
+Overhaul input to use getch					- Done!
+Key bindings for use with getch				- Done!
+Stealth system for Nightblades 				- Done!
+Tavern Brawls								- Done!
+Clear/clean functions file					- Done?
+Change the spacing of combat				- 95%
+Magic/skills in other classes				- 80%
+Add repeatable random events(Explore)		- 80%
+Add more tips								- 60%
+Tavern rumours and events 					- 30%
+Add a tutorial								- 10%
+Add a description after the fight at Tyria.
+Fanfare after winning the tournament
+More character customization
+Introduce stock to stores
+
+Bug Fixing etc:
+Update Scrolls 																	- Done!
+Clean player class 																- Done!
+Spell Fix 																		- Done!
+Using Scrolls out of combat 													- Done!
+Remove time system, creates tedious gameplay 									- Done!
+Revise Spell System 															- Done!
+Poison heals 																	- Fixed!
+killCheck when using spells 													- Fixed!
+When last enemy dies of corruption, battle does not end before next turn. 		- Fixed!
+Move actual casting to Spell class? 											- Done!
+After changes combat is severely bugged 										- Fixed!
+Running from tournament battle counts as win 									- Fixed
+Scrolls take mana 																- Fixed
+Redo spellDisplay() 															- Done!
+Location Handling 																- Done!
+Additional non attacking enemy stalling victory									- Fixed
+You can cast spells on dead foes												- Fixed!
+Scrolls doesn't work on followers												- Fixed!
+After ID change monster gen seems much less random, a lot of the same monsters  - Fixed!
+Change inventoryDisplay to use Choose functions									- Done!
+Revise spell system again. Remove affinity, Obsolete Magic class.				- Done!
+Somehow the value of Mana barrier gets set to 0 after being initialized to 3    - Fixed!
+Dispell scroll is used even if you cancel										- Fixed!
+One-Eyed Raven is always the first enemy										- Fixed!			
+Fix spell naming to work with binding saves										- Fixed!
+AoE Scrolls does not work, implement a new way to handle AoE spells				- Done!
+Make number bindings work in combat												- Done!
+Move enemy buffer to player class												- Done!
+Screwed over number binding with new fix										- Fixed!
+Doesn't save variables(tournament result)										- Fixed!
+Enchant Weapon gets overwritten 												- Fixed!
+Dying at the defence of Tyria gives you unconscious message						- Fixed!
+Flame Haze deals ~-18 damage													- Fixed!
+Only a pause when dust devil is supposed to attack								- Fixed!
+Pause() doesn't work at certain instances, so dialogue is skipped				- Fixed!
+Bought armor is not equipped?													- Fixed!
+If an enemy dies from an effect it attacks once after							- Fixed!
+Make inventory items shift upwards to fill empty slots							- Done!
+fix key bindings tips and initial key binding for channelers and nightblade		- Done!
+enemy sorting doesn't work														- Fixed!
+Followers kept between saves													- Fixed!
+Skips messages at times															- Fixed, or very rare
+Quick action is broken, counts as a normal action								- Fixed
+Tavern returns you to Tyria at any selection									- Fixed
+Combat clears if enemy attacks before you in first round of combat				- Fixed
+Enemies sometimes attack after dying?
+Combat spacing is off when companions are involved.
+		
+To finish:
+Main story 				- 80%
+Balancing stats 		- 90%
+Consolidating Code		- 90%
+
+Think of:
+Should all text be slow scroll for the first time you see it?
+Rethink spell descriptions, add flexibility for enemy casters

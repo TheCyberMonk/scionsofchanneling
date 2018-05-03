@@ -1,0 +1,213 @@
+#include "Being.h"
+
+
+void Intro()
+{
+	Weapon StarterWeapon;
+	//Player Hero("Daevas", "Channeler", 10, 0, 3, 0, 2, 0);
+	//Tyria(&Hero);
+
+	Player Hero("Farmer John", "Peasant", 6, 0, 1, 0, 1, 0); //Name, Class, Health, Mana, Strength, Intelligence, Agility, Gold
+	system("CLS");											//Intro thingy here. Add reasons for searching for the city
+	cout << "You have been trekking through the desert for days, searching for the \n city of Tyria. It is the to be the last stronghold for civilisation in Ayataria\n"
+	"the darkness has swept over this planet for decades. \nA dark corruption that turns men, animals and all life into a wicked and tormentet form of exsistence. The old say"
+	" it all started when a Channelers who once bared the name Alandi discovered an ancient pyramid. Within it he found the genesis machinery used to make all of Aya and \nto balance all the forces known to the gods until the sun expanded, and swallowed us all."
+        " \nThe machinery wasent easily controlled by mans simple mind and he sent our world into this age of dispair. The arogance of man and the power of the machinery corrupted Alandi`s heart and he is now better known as The Dark Lich."
+        "  \n
+	" " << name << " starts to question the gods... \nHave they forsaken us? Just because of one man?\nWill this endless darkness end? before you have the time to ponder more your feet starts to drag, and you stumble and fall. Is this the end? Will this be my last journy? never made it to Tyria to find out if mankind still"
+	" might make it?\n \n\n";
+        system("PAUSE"); system("CLS");
+
+        cout << ". As you move closer the guards on top of the \nwall notices you. They all aim"
+	" different ranged weapons at you, all the way \nfrom bows to powerful ancient weaponry. They watch intently as you approach... \nEventually, they lower their weapons. Most"
+	" likely after discovering that you haveno mutations. After a short while the gate opens and a tall muscular man with along ornate cloak approaches.\n\n";
+	system("PAUSE"); system("CLS");
+
+	cout << "Greetings, it is rare to see a human wandering alone these days.\nWhat is your name?\n>";
+	string name;
+	cin >> name;
+	Hero.nameSet(name);
+	system("CLS");
+
+	cout << "Welcome " << name << " to one of the few remaining bastions of human defense. \nMy name is Hadgar and I'm the military commander of this fortress.\n";
+	cout << "The fact that you even made it here is a wonder and a testament to your skill incombat. You are most welcome here, as we are in dire need of able men.\n\n";
+	system("PAUSE");
+
+	int input = 0;
+	while (input < 1 || input > 5)
+	{
+		system("CLS");
+		cout << "Hadgar:\n";
+		cout << "What is your style of combat if I may ask? \nAs a potential recruit I would be very interested to know.\n\n";
+		cout << "1: Berserker\n";
+		cout << "2: Channeler\n";
+		cout << "3: Nightblade\n";
+		cout << "4: Gunslinger\n";
+		cout << "5: Peasant(HARD)\n>"; //Replace with Monk?
+		cin >> input;
+		system("CLS");
+
+		char choice = ' ';
+		if (input == 1)
+		{
+			cout << name << ": \n";
+			cout << "I use gigantic weapons to smash my enemies to pieces!\n\n";
+			system("PAUSE");
+
+			while (choice != 'n' && choice != 'N')
+			{
+				cout << "\n\nAre you sure that you want to be a Berserker?(y/n)\n>";
+				cin >> choice;
+				system("CLS");
+
+				if (choice == 'y' || choice == 'Y')
+				{
+					Hero.classSet("Berserker");
+					Hero.strMod(2);
+					Hero.agiMod(1);
+					StarterWeapon.idTransform(1);
+					Hero.equipWeapon(&StarterWeapon);
+
+					cout << "Hadgar:\n";
+					cout << "The need for brutality has never been stronger, you'll fit right in...\nIf that is your wish.\n\n";
+					system("PAUSE"); system("CLS");
+					break;
+				}
+				if (choice == 'n' || choice == 'N')
+					input = 0;
+			}
+		}
+		if (input == 2)
+		{
+			cout << name << ": \n";
+			cout << "I channel the chaotic energies of this world to my will...\n\n";
+			system("PAUSE");
+			while (choice != 'n' && choice != 'N')
+			{
+				cout << "\n\nAre you sure that you want to be a Channeler?(y/n)\n>";
+				cin >> choice;
+				system("CLS");
+
+				if (choice == 'y' || choice == 'Y')
+				{
+					Hero.classSet("Channeler");
+					Hero.intMod(3);
+					Hero.agiMod(1);
+					StarterWeapon.idTransform(2);
+					Hero.equipWeapon(&StarterWeapon);
+
+					cout << "Hadgar:\n";
+					cout << "We have very few Channelers among us, your assistance would be most welcome.\n\n";
+					system("PAUSE"); system("CLS");
+					break;
+				}
+				if (choice == 'n' || choice == 'N')
+					input = 0;
+			}
+		}
+		if (input == 3)
+		{
+			cout << name << ": \n";
+			cout << "I emerge from the shadows, striking fast with enchanted weapons.\n\n";
+			system("PAUSE");
+
+			while (choice != 'n' && choice != 'N')
+			{
+				cout << "\n\nAre you sure that you want to be a Nightblade?(y/n)\n>";
+				cin >> choice;
+				system("CLS");
+
+				if (choice == 'y' || choice == 'Y')
+				{
+					Hero.classSet("Nightblade");
+					Hero.strMod(1);
+					Hero.agiMod(1);
+					Hero.intMod(1);
+					StarterWeapon.idTransform(3);
+					Hero.equipWeapon(&StarterWeapon);
+
+					cout << "Hadgar:\n";
+					cout << "You can enchant your weapons? \nI have never heard of this, most interesting!\n\n";
+					system("PAUSE"); 
+					break;
+				}
+				if (choice == 'n' || choice == 'N')
+					input = 0;
+			}
+		}
+		if (input == 4)
+		{
+			cout << name << ": \n";
+			cout << "I use range and height to my advantage and rain hell down upon my enemies.\n\n";
+			system("PAUSE");
+
+			while (choice != 'n' && choice != 'N')
+			{
+				cout << "\n\nAre you sure that you want to be a Gunslinger?(y/n)\n>";
+				cin >> choice;
+				system("CLS");
+
+				if (choice == 'y' || choice == 'Y')
+				{
+					Hero.classSet("Gunslinger");
+					Hero.agiMod(2);
+					Hero.strMod(1);
+					StarterWeapon.idTransform(4);
+					Hero.equipWeapon(&StarterWeapon);
+
+					cout << "Hadgar:\n";
+					cout << "You possess an ancient fire weapon? That is most excellent, if you would \nconsider joining us you would be a huge boon to our forces.\n\n";
+					system("PAUSE"); system("CLS");
+				}
+				if (choice == 'n' || choice == 'N')
+					input = 0;
+			}
+		}
+		if (input == 5)
+		{
+			cout << name << ": \n";
+			cout << "I'm not skilled in combat, I was recently separated from my caravan. \nAnd was lucky to find my way alone.\n\n";
+			system("PAUSE");
+
+			while (choice != 'n' && choice != 'N')
+			{
+				cout << "\n\nAre you sure that you want to be a Peasant?(y/n)\n>";
+				cin >> choice;
+				system("CLS");
+
+				if (choice == 'y' || choice == 'Y')
+				{
+					Hero.strMod(1);
+					StarterWeapon.idTransform(5);
+					Hero.equipWeapon(&StarterWeapon);
+
+					cout << "Hadgar:\n";
+					cout << "I see... Then you are most fortunate indeed. I am sure we can find something \nfor you to do, and eventually train you in the arts.\n\n";
+					system("PAUSE"); system("CLS");
+					break;
+				}
+				if (choice == 'n' || choice == 'N')
+					input = 0;
+			}
+		}
+	}
+	cout << "Hadgar;\n";
+	cout << "It was very nice to meet you " << name << ", and I hope you will join our cause. \nIn any case you are free to stay here as long as you please. \nWe will speak more later, ";
+	cout << "but for now I have important matters to attend to. \nExplore the fortress as you please, and you may stay at the barracks \nif you need lodgings.\n\n\n";
+	cout << "The Commander abrubtly turns around and marches into the city, about half a \ndozen guards who were waiting within the entrance follows suit.";
+	cout << "\n\nYou are left to your own devices.\n\n\n\n";
+	system("PAUSE"); system("CLS");
+
+	cout << "Huge stone walls surround the entire city, as well as another set of walls \naround the town center. The sheer size of them leaves you breathless.\n";
+	cout << "Never have you witnessed anything like it. It's not suprising that this place \nis possibly the last city standing. As very few mutations ever give ";
+	cout << "flight the \nfortress is extremely defensible. As a downside though the city looks very \nbleak. Almost everything is in gray stone and no effort seems to have ";
+	cout << "been made towards aesthetics. \n\nThe amount of people is staggering, as a nomad you have never seen more than a \ndozen people gathered at the same time, but here";
+	cout << " in the middle of the city thereare hundreds of people passing back and forth. You can assume many thousands \nlive within these walls. After awhile you shake off ";
+	cout << "your amazement and decide toexplore, it is the afternoon and you have plenty of time before dark.\n\n";
+	system("PAUSE"); system("CLS");
+
+	Hero.healthMod(Hero.maxHealthGet());
+	Hero.manaMod(Hero.maxManaGet());
+	Tyria(&Hero);
+
+}

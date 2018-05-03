@@ -1,0 +1,106 @@
+0.1.000
+- Your turn in combat will no longer end when inputting an incorrect value
+- Optimized enemy handling by integrating it with the player class
+
+0.1.002
+- Added stacking of potions to simplify game play, will add to more items later on
+- Fixed a break in the main quest, one branch would simply not continue the story (oops!)
+
+0.1.005
+- Spiced up the main menu
+- Color coded player health and mana
+- The players color configuration will now be stored
+- Implemented status effects for companions
+- Minor fixes and plenty of code cleaning
+
+0.1.007
+- Modified status effects so Intelligence has an impact on some of them.
+- Added Magic Defence to armor, and some robes with that stat.
+- Added the ability to fight the next type of enemies at the end of the current game.
+- Misc stuff, code cleaning/optimization/restructuring, more color coding, minor fixes, game balancing.
+
+0.1.009
+- Replaced all system commands, apparently bad to use and created false positives with some antivirus programs.
+- Increased chance of melee crit, but reduced crit damage to 150% down from 200%.
+- Added multiple functions to more easily manage text.
+- Started expanding the armor system, you now have multiple slots to equip armor in.
+- Added new armor pieces which are unlocked in the store as you level.
+- Increased drop rate some, and unlocked scrolls and tomes for all spells to be able to drop.
+- Fixed/Finished implementing Conjure Stone Golem Scroll and the Storm Scroll.
+
+0.1.013
+- Fixed a new bugg where you couldn't use spelltomes.
+- Fixed a bugg where companions would use your defence score.
+- Added some more tomes to the store, some which are level unlocked.
+- Two new potions are availible in the general store.
+- Rebalanced stats, encounters, spells, etc.
+- Redid targeting, you should now be targeted as much as your companions, on average.
+- Added some more game tips.
+- Implemented the defence of Tyria quest stage.
+- Implemented a loot drop system, some mobs now have unique drops.
+
+0.1.015
+- Implemented a new class, the Nightblade
+- Redid the combat turns, every being gets an initiative determined by their agility, initiative bonuses,
+  and a slight random element. And everyone attacks in the order of that initiative, so enemies and 
+  companions no longer attack all at once,
+- Added another quest stage.
+
+0.1.016
+- Removed corruption from enemy channelers, they now however cast drain life more often.
+- Enemies are now less likely to do no damage at all.
+- Some UI fixes / improvements.
+
+- Redid leveling, you can now choose which stats to increase.
+  Berserkers and Channelers have a stat focus however and will always increase one stat
+  in either intelligence or strength and can choose one extra stat other than that one.
+  Nightblade has no focus and can choose two stats.
+
+- Poison and Corruption no longer stack. 
+  If afflicted a second time the duration is just expanded.
+
+0.2.000
+- Implemented multiple save slots
+- Saves now include quest varibles(Tournament rounds completed). Previous save files not compatible.
+
+- New class, the Monk
+
+- You can now skip text scrolling by hitting any key
+- Converted more text/dialogue to slow scrolling as it's now more convenient.
+- The tournament can now be attempted as many times as you like before turning in the quest.
+- Spell tomes are now only available to Channelers
+- New potion that buffs strength
+- Misc improvements/fixes
+
+0.3.000
+- Cleaning code, fixing bugs
+- Rewrote some dialog and descriptions, Hadgar is now more welcoming of new helpful hands.
+- Reworked the status screen, you can now review your spells and equipment within it as well.
+- Dispel can now also target enemies.
+- Inventory now self-consolidate as items gets removed.
+- Reworked the input to use getch, should reduce "enter" spam.
+- As a result the key binding is also reworked and work much better now.
+- Added dodge as a quick action.
+- Gave the optional last fight a proper boss battle, and with it it's own unique ending.
+- Some improvements to AI
+
+0.3.050
+- Fixed a bug where casters would do nothing on a turn.
+- Improvements to AI/Final boss fight.
+- Fixed a bug where it would not save some of your key bindings.
+- Enemy order now self-consolidate as enemies die.
+- Fixed a bug that allowed players to keep followers between saves.
+
+0.4.000
+- Touching up and rewrote the Intro a bit.
+- Fixed a bug where quick actions would take up an entire turn.
+- Properly implemented the explore function, you will also need to explore to find shops and other locations.
+- Added a new ability to the Barbarion, Rage
+
+0.4.200
+- Complete code overhaul using the curses library to enable cross platform compilation.
+- Reworked the UI to make use of the new functions of the ncurses library(This is still not fully complete and will cause some visual bugs but should not hinder gameplay).
+- Added a autosave function whenever the player progresses in the story.
+- Fixed not being able to use the Tavern
+- Fixed keybindings, players should now correctly start with bindings for their class abilities.
+

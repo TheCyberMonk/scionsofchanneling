@@ -1,0 +1,134 @@
+Item ids:
+1 - Iron Mace
+2 - Oak Staff
+3 - Broadsword
+4 - Leather Cuirass
+5 - Tattered Robes
+6 - Iron Armor
+7 - Small Health Potion
+8 - Small Mana Potion
+9 - Sparks Tome / Harvesting Electricity
+10 - Fireball Tome / The Aspect of Fire
+11 - Heal Tome / The Flow of Life
+12 - Regeneration Tome / Balancing Lifeflow
+13 - Dispell Tome / Reversing Channeled Flows
+14 - Corruption Tome / The Weakness of Flesh
+15 - Drain Life Tome / Siphoning Techniques
+16 - Storm Tome / Secrets of the Storm
+17 - Haze Tome / Warm Winds
+18 - Conjure Stone Golem Tome / Channeling Rock
+19 - Sparks Scroll / Scroll of Sparks
+20 - Fireball Scroll / Fiery Incantations
+21 - Heal Scroll / Secrets of Rejuvenation
+22 - Regeneration Scroll
+23 - Dispell Scroll
+24 - Corruption Scroll
+25 - Drain Life Scroll
+26 - Storm Scroll / Stormbringer
+27 - Flame Haze Scroll
+28 - Conjure Stone Golem Scroll / Infusing the Earth
+29 - Barrier Scroll
+30 - Leather Cap
+31 - Leather Gloves
+32 - Leather Shoulder Pads
+33 - Leather Leggings
+34 - Health Potion
+35 - Mana Potion
+36 - Short Sword
+37 - Defensive Mana Techniques (Spelltome)
+38 - Elixir of Strength
+
+Armor Slots:
+0: Head
+1: Neck
+2: Shoulder
+3: Chest
+4: Leggs
+5: Gloves
+6: Boots
+
+Spells:
+1 - Sparks
+2 - Fireball
+3 - Heal
+4 - Regeneration
+5 - Dispell
+6 - Corruption
+7 - Drain Life
+8 - Thunderstorm
+9 - Flame Haze
+10 - Stone Golem
+11 - Whirlwind
+12 - Knock-down
+13 - Execute
+14 - Mana Barrier
+15 - Ambush
+16 - Poison Strike
+17 - Enchant Weapon
+18 - Devastating Strike
+19 - Quick Attacks
+20 - Dodge
+21 - Stunning Strike
+22 - Rage
+
+
+Effects:
+1 - Blurred Vision
+2 - Weak Poison
+3 - Regeneration
+4 - Corruption
+5 - Knocked Prone
+6 - Mana Barrier
+7 - Enchanted Weapon
+8 - Dodge
+9 - Stunning Strike
+10 - Enhanced Strength
+11 - Rage
+
+Enemies:
+1 - Mutant Rat
+2 - Black Goo
+3 - One-eyed Crow
+4 - Mutant Bandit
+5 - Dust Devil
+6 - Giant Viper
+7 - Abomination
+8 - Channeler
+9 - Slave Husk
+10 - Achalio, Scion of Channeling
+20 - Townsman
+
+Stages:
+1 - Accepte
+2 - Finished tournament
+3 - Castle Skirmish start
+4 - Skirmish finished
+5 - Lich quest start
+6 - Gauntlet finish
+7 - Lich quest finish
+10 - Mysterious Symbol found
+11 - Found the Channelers Hideout
+12 - Found the Blacksmith
+13 - Found the General Goods
+14 - Found the Tavern - Drink for +1str -1int
+15 - Witnessed and learned about Statue
+16 - Tar rain event
+17 - Backstory meandering
+Variables:
+1 - Tournament rounds completed
+
+Cheats:
+894 - Full health and mana
+895 - Give gold, input amount
+896 - Give exp, input amount
+897 - Learn spell, input id
+898 - Add companion by id and amount
+899 - Flip stage value, input id
+900 - Get all quest stages (1-10)
+901 - Difficulty 3 fighting pit
+902 - Add item by id
+903 - Add Strength stat
+904 - Add Intellect stat
+905 - Add Agility stat
+906 - Achalio Boss Fight
+907 - Add Experience to companions

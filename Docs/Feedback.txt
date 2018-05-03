@@ -1,0 +1,79 @@
+Todo:
+less chance for 1round deaths
+
+Timed events
+Distance/range system in combat
+
+
+Tt all started when a Channelers who once bared the name Alandi discovered an ancient pyramid. Within it he found the genesis machinery used to make all of Aya and to balance 
+all the forces known to the gods until the sun expanded, and swallowed us all. The machinery wasent easily controlled by mans simple mind and he sent our world into this age of
+despair. The arogance of man and the power of the machinery corrupted Alandi`s heart and he is now better known as The Dark Lich. You start to question the gods... 
+Have they forsaken us? Just because of one man? Will this endless darkness end? before you have the time to ponder more your feet starts to drag, and you stumble and fall. Is 
+this the end? Will this be my last journy? never made it to Tyria to find out if mankind still might make it?
+
+
+Azhole: Hva er Aya? Er det verdenen? Hvordan kan Alandi ekistere før verden?
+Azhole: Kanskje et kontinent? kan gi mening
+Azhole: Også dannet han civilazation of Ayataria. Men da ville ikke han ble sett på som en "bad guy" uansett da, siden han hadde så stor makt at han lett kunne endre historie og faktaer
+Arnoldus: Alandi er bare en man
+Arnoldus: Aya er alt
+Arnoldus: vi vet om
+Arnoldus: var bare*
+Arnoldus: Han fucket opp når han begynte åå bruke maskinen han fant
+Arnoldus: ble kanskje mye frem og til bake.
+Arnoldus: har alt endret ennå mer Å^ÅÅ
+Arnoldus: Alandi ble en dark mongo når han ble super korruptert siden det var han som var i senteret av fuckup ^^
+Azhole: Liker forklaring jeg kom med bedre:p Også kan spilleren finne ut hvordan han hadde fucket opp alt han selv hadde lagt senere i spillet.
+Arnoldus: Utmerket ide ;)
+Azhole: Men i begynnelsen er han sett på som en skaper, en gud. Også får vi vite senere at han bare var en man
+
+
+Hey! Da er jeg ferdig! Du skriver så bra engelsk, jeg blir revet med! ^^
+Awww... Jeg kom til slutten. :\
+Det var awesome, og jeg fikk dnd feels på det! ^^
+
+Så kult :D
+
+ingen bugs så langt heller.
+
+bare å komme med feedback altså, hva enn du kommer på:)
+
+Du skriver bra, så det er spennende og ordentlig. Liker det. Et bredt vokabulær har du. 
+Fikk følelse av DnD nå jeg spillte det. 
+Er bare litt dumt det ikke var flere features, men jeg likte det ^^
+
+Ok, hva slags features ville du ha likt? Var det noe spesifikt du reagert positivt eller negativt på?
+
+Generelt utviklet det, kart, random mathematical occurences, flere valgmuligheter, og slikt
+Hadde vært gøy om det hadde vært tidsbasert, og det kom waves med mutants tilfeldig, eller etter countdown
+
+ja det hadde vært artig, kan se på det:)
+Hvor lang tid tok det å fulføre? Var det noe I spillet som var forvirrende og du ikke skjønte med en gang?
+
+Nei, ikke egentlig, kjøpte items, equiped them, tournament, save og load, explore funksjonen var jeg usikker på hva slags funksjon hadde, men alt var der og fungerte
+
+En annen ting jeg har tenkt på er å gi personligheter til followers og litt dialog. Explore funksjonen er ikke utvikla:p Tror jeg glømte å fjerne det ifra Desert menyen?
+Hvilke deler av spillet er du mest intressert i? altså hva vil at jeg skal utvikla mer?:)
+
+Ja, den var på menyen.
+Det er en god ide, utvikle klasser innen for spells med kategorier på elementene. 
+Fått inn en distanse funksjon på battles, ranged attacks er + på avstand og visse spells og attacks vil ikke fungere med en fiende oppå seg.
+Personligheter er en god ide ^^
+
+Jeg har klasser for elementer:) Men jeg har ikke nok spells til at jeg har funnet så mye bruk for å gruppere dem. 
+Det distanse forslaget er veldig godt:D Spesielt siden jeg har tenkt å introdusere en ranged class.
+
+Kanskje skape landscapes med fordeler og ulemper basert på kartet man kan ha når man explorer?
+
+hehe, yeah, mye arbeid før jeg kommer til det punktet men:p
+Må finne ut hvordan jeg skal gjøre kartet hvertfall først.
+Mye bra feedback:D Tror jeg skal jobbe med å få til det tids opplegget du nevnte, fikk mye bra ideer der.
+Hva spilte du som forresten? Berserker eller CHanneler?
+
+Ja, kan tenke meg at slikt tar tid. I wouldn't know where to start
+Bare hyggelig! Dette minte meg om Demonata series med Tyria og mutantene. Levde meg helt inn i det ^^
+Channeler ^^
+
+Mana shield ftw
+
+hehe, nice. digger mana shield og^^ bare litt beskymret for at folk ikke skjønner helt hvordan man bruker det. er jo under game tips, men sikkert ikke alle sjekker det.
