@@ -1,7 +1,7 @@
 # Scions Of Channeling
 Inspired by classic MUDs and turn based RPGs, the text based adventure game Scions of Channeling is a hobby project of mine I've worked on on and off for many years now.
 
-The game is set in a post-apocalyptic world, when powerful magic know as channeling went awry it transformed most of the land along with its inhabitants into corrupted and mutated versions of itself. 
+The game is set in a post-apocalyptic world, when powerful magic known as channeling went awry it transformed most of the land along with its inhabitants into corrupted and mutated versions of itself. 
 You are one survivor in this harsh land, seeking refuge and to possibly make a difference.
 
 # How to play
@@ -13,7 +13,7 @@ I've just implemented an autosave for each story progression, but saving often i
 The choice of your class determines the difficulty of the game, Berserker and Channeler can be looked on as an easy difficulty, Nightblade as medium and Monk as hard.
 
 Each class has certain quick actions, that will not use up your turn when done, however you only have access to one quick action each turn. Both the Channeler and Nightblade 
-have self buffs that are vital to their function in combat, they are quick actions but it is often prefferable to apply them before combat. Both "Mana Shield" and "Enchant Blade" 
+have self buffs that are vital to their function in combat, they are quick actions but it is often preferable to apply them before combat. Both "Mana Shield" and "Enchant Blade" 
 is bound to 'E' and can be used at any time in and out of combat. Note however that any buff/debuff dissipates after combat and when you rest.
 
 When you first arrive to the main town/hub you will not have access to all the places/stores, for that you will have to explore and possibly encounter other interesting situations as well.
