@@ -290,7 +290,7 @@ void TournamentDefeat(Player* hero, int rounds)
 	}
 	else if (hero->stageGet(2) && !hero->stageGet(3))
 	{
-		//clear();
+		//clear(); 
 		printw("Defeat!\nYou finished %i rounds.\n", rounds);
 		if (rounds > hero->varGet(1))
 		{

@@ -1,6 +1,6 @@
 IDIR =../include
 CC=g++
-CFLAGS=-lncurses -I$(IDIR)
+CFLAGS= -lncurses -I$(IDIR)
 
 ODIR=source
 LDIR =../lib

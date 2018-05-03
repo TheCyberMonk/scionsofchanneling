@@ -9,7 +9,7 @@ void Intro()
 	Clear(&hero);
 	Paragraph(&hero, "You have been trekking through an arid desert for days, searching for the rumoured city of Tyria. It is said to be the last stronghold for the civilization of Ayataria, and probably the last "
 		"hope for mankind. If there exists a safe haven yet in this world, that would be it. The only place where one could hope to make a difference. A darkness has swept over this land for centuries. "
-		"A corruption that turns beasts, men and all life into a wicked and tormentet form of exsistence. The elders say it was all started by very powerful Channelers called The Dark Liches. If that "
+		"A corruption that turns beasts, men and all life into a wicked and tormented form of exsistence. The elders say it was all started by very powerful Channelers called The Dark Liches. If that "
 		"is the case though it is already far out of their controll. No one really knows however, it could simply be that the gods have grown tired of this mortal plane...\n\nPondering this question your "
 		"feet starts to drag, you're closing your limit. But just as thoughts of giving up start entering your mind, you can make out tall stone walls in the distance. As you move closer the guards "
 		"on top of the wall notices you. They all aim different ranged weaponry at you, all the way from bows to powerful ancient boomsticks. They watch intently as you approach. Eventually, they "

@@ -97,17 +97,17 @@ public:
 	int CombatTurn;
 
 	Weapon wInventory[9];
-	Weapon* wPointer[9] = { &wInventory[0], &wInventory[1], &wInventory[2], &wInventory[3], &wInventory[4], &wInventory[5], &wInventory[6], &wInventory[7], &wInventory[8] };
+	Weapon* wPointer[9];
 	Armor aInventory[9];
-	Armor* aPointer[9] = { &aInventory[0], &aInventory[1], &aInventory[2], &aInventory[3], &aInventory[4], &aInventory[5], &aInventory[6], &aInventory[7], &aInventory[8] };
+	Armor* aPointer[9];
 	Potion pInventory[9];
-	Potion* pPointer[9] = { &pInventory[0], &pInventory[1], &pInventory[2], &pInventory[3], &pInventory[4], &pInventory[5], &pInventory[6], &pInventory[7], &pInventory[8] };
+	Potion* pPointer[9];
 	Scroll sInventory[9];
-	Scroll* sPointer[9] = { &sInventory[0], &sInventory[1], &sInventory[2], &sInventory[3], &sInventory[4], &sInventory[5], &sInventory[6], &sInventory[7], &sInventory[8] };
+	Scroll* sPointer[9];
 	SpellTome tInventory[9];
-	SpellTome* tPointer[9] = { &tInventory[0], &tInventory[1], &tInventory[2], &tInventory[3], &tInventory[4], &tInventory[5], &tInventory[6], &tInventory[7], &tInventory[8] };
+	SpellTome* tPointer[9];
 	Item Inventory[9];
-	Item* iPointer[9] = { &Inventory[0], &Inventory[1], &Inventory[2], &Inventory[3], &Inventory[4], &Inventory[5], &Inventory[6], &Inventory[7], &Inventory[8] };
+	Item* iPointer[9];
 	Spell spell[9];
 	Spell scrollSpell;
 	Status Effect[9];

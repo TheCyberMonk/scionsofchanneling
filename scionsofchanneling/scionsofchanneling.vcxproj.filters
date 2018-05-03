@@ -44,67 +44,67 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\obj\Armor.cpp">
+    <ClCompile Include="..\source\Armor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\obj\Battle.cpp">
+    <ClCompile Include="..\source\Battle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\obj\Being.cpp">
+    <ClCompile Include="..\source\Being.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\obj\Companion.cpp">
+    <ClCompile Include="..\source\Companion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\obj\Desert.cpp">
+    <ClCompile Include="..\source\Desert.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\obj\Enemy.cpp">
+    <ClCompile Include="..\source\Enemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\obj\Functions.cpp">
+    <ClCompile Include="..\source\Functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\obj\Intro.cpp">
+    <ClCompile Include="..\source\Intro.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\obj\Item.cpp">
+    <ClCompile Include="..\source\Item.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\obj\KeyBinding.cpp">
+    <ClCompile Include="..\source\KeyBinding.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\obj\LichHideout.cpp">
+    <ClCompile Include="..\source\LichHideout.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\obj\Main.cpp">
+    <ClCompile Include="..\source\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\obj\Player.cpp">
+    <ClCompile Include="..\source\Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\obj\Potion.cpp">
+    <ClCompile Include="..\source\Potion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\obj\Saving.cpp">
+    <ClCompile Include="..\source\Saving.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\obj\Scroll.cpp">
+    <ClCompile Include="..\source\Scroll.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\obj\Spell.cpp">
+    <ClCompile Include="..\source\Spell.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\obj\SpellTome.cpp">
+    <ClCompile Include="..\source\SpellTome.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\obj\StatusEffect.cpp">
+    <ClCompile Include="..\source\StatusEffect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\obj\Tyria.cpp">
+    <ClCompile Include="..\source\Tyria.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\obj\Weapon.cpp">
+    <ClCompile Include="..\source\Weapon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

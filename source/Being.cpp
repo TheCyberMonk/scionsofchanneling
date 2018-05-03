@@ -35,6 +35,22 @@ Being::Being()
 		pInventory[i].Reset();
 	for (int i = 0; i < INVENTORY_SIZE; i++)
 		sInventory[i].Reset();
+
+	for (int i = 0; i < 9; i++)
+		wPointer[i] = &wInventory[i];
+	for (int i = 0; i < 9; i++)
+		aPointer[i] = &aInventory[i];
+	for (int i = 0; i < 9; i++)
+		wPointer[i] = &wInventory[i];
+	for (int i = 0; i < 9; i++)
+		pPointer[i] = &pInventory[i];
+	for (int i = 0; i < 9; i++)
+		sPointer[i] = &sInventory[i];
+	for (int i = 0; i < 9; i++)
+		tPointer[i] = &tInventory[i];
+	for (int i = 0; i < 9; i++)
+		iPointer[i] = &Inventory[i];
+
 }
 Being::Being(string name, string title, string type, int level, int health, int mana, int strength, int intelligence, int agility, int exp, int gold) 
 {
@@ -71,6 +87,21 @@ Being::Being(string name, string title, string type, int level, int health, int 
 		pInventory[i].Reset();
 	for (int i = 0; i < INVENTORY_SIZE; i++)
 		sInventory[i].Reset();
+
+	for (int i = 0; i < 9; i++)
+		wPointer[i] = &wInventory[i];
+	for (int i = 0; i < 9; i++)
+		aPointer[i] = &aInventory[i];
+	for (int i = 0; i < 9; i++)
+		wPointer[i] = &wInventory[i];
+	for (int i = 0; i < 9; i++)
+		pPointer[i] = &pInventory[i];
+	for (int i = 0; i < 9; i++)
+		sPointer[i] = &sInventory[i];
+	for (int i = 0; i < 9; i++)
+		tPointer[i] = &tInventory[i];
+	for (int i = 0; i < 9; i++)
+		iPointer[i] = &Inventory[i];
 }
 void Being::Reset()
 {
