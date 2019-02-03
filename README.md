@@ -22,7 +22,7 @@ With that, I hope you enjoy!
 
 # Builds
 
-Windows: https://github.com/TheCyberMonk/scionsofchanneling/raw/master/builds/win/SoC%20V0.4.200.zip
+Windows: https://github.com/TheCyberMonk/scionsofchanneling/raw/master/builds/win/SoC%20V0.4.300.zip
 
 Mac: https://github.com/TheCyberMonk/scionsofchanneling/raw/master/builds/mac/SoC%20V0.4.200.zip
 
