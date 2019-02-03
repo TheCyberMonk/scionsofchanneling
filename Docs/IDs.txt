@@ -71,7 +71,6 @@ Spells:
 21 - Stunning Strike
 22 - Rage
 
-
 Effects:
 1 - Blurred Vision
 2 - Weak Poison
@@ -98,6 +97,12 @@ Enemies:
 10 - Achalio, Scion of Channeling
 20 - Townsman
 
+Companions:
+1 - Soldier
+2 - Stone Golem
+3 - Gerald
+4 - Achalios Vessel
+
 Stages:
 1 - Accepte
 2 - Finished tournament
@@ -114,6 +119,7 @@ Stages:
 15 - Witnessed and learned about Statue
 16 - Tar rain event
 17 - Backstory meandering
+18 - Joined the Channelers Guild
 Variables:
 1 - Tournament rounds completed
 

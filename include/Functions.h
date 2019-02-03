@@ -52,6 +52,7 @@ string GetStringInput(Being* hero, string prompt, bool cls);
 
 int kbhit();
 void Pause();
+void Pause(Being* hero);
 void Clear(Being* being);
 void SleepC(int x);
 void ClearX(int y, int x);
@@ -67,9 +68,11 @@ void PausedString(string output);
 void ColoredString(string text, int color);
 void PausedColoredString(string text, int color); 
 int HealthColorCode(Being* being);
-int ManaColorCode(Being* being); 
+int ManaColorCode(Being* being);
+int KiColorCode(Being* being);
 void HealthOutput(Player* hero, Being* being);
 void Save(Player* save, bool autosave);
 bool Load(Player* load);
-void Options(Player* hero);
+void Menu(Player* hero);
+void Journal(Player* hero);
 

@@ -100,7 +100,13 @@
 0.4.200
 - Complete code overhaul using the curses library to enable cross platform compilation.
 - Reworked the UI to make use of the new functions of the ncurses library(This is still not fully complete and will cause some visual bugs but should not hinder gameplay).
-- Added a autosave function whenever the player progresses in the story.
+- Added an autosave function whenever the player progresses in the story.
 - Fixed not being able to use the Tavern
 - Fixed keybindings, players should now correctly start with bindings for their class abilities.
 
+0.4.xxx
+- Added a journal so players can check their current progress in the story.
+- Fixed misc visual bugs.
+- Fixed Pause Bug so messages are no longer accidentally skipped.
+- Added a bit more to the channelers hideout story.
+- Fixed Combat spacing of companions

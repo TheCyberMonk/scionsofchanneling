@@ -253,6 +253,8 @@ bool Load(Player* load)
 			load->Binding[i].setBinding(bindingNumber[i], bindingType[i], bindingID[i]);
 
 		load->TutorialState = tutorialState;
+
+		//Paragraph(&*load, "Game succesfully loaded!", true, true, true, 10);
 	}
 	else{
 		printw("Could not open file!\n");

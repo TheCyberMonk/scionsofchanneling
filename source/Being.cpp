@@ -375,9 +375,12 @@ void Being::xResetSet(int x){
 void Being::Talk(Being* hero, string words, bool cls1, bool cls2, bool pause, int speed)
 {
 	if (cls1)
+	{
+		hero->yPosReset();
 		clear();
+	}
 
-	mvprintw(hero->yPosGet(), 0, "%s, the %s:", Name.c_str(), Title.c_str()); hero->yPosAdd(1);
+	mvprintw(hero->yPosGet(), 0, "%s, the %s:", Name.c_str(), Title.c_str()); hero->yPosAdd(2);
 	Paragraph(&*hero, words, false, cls2, pause, speed);
 }
 void Being::Attack(Player* hero)

@@ -7,10 +7,10 @@ void Intro()
 	Player hero("Farmer John", "Peasant", 15, 0, 0, 0, 0, 5);
 
 	Clear(&hero);
-	Paragraph(&hero, "You have been trekking through an arid desert for days, searching for the rumoured city of Tyria. It is said to be the last stronghold for the civilization of Ayataria, and probably the last "
+	Paragraph(&hero, "You have been trekking through an arid desert for days, searching for the rumored city of Tyria. It is said to be the last stronghold for the civilization of Ayataria, and probably the last "
 		"hope for mankind. If there exists a safe haven yet in this world, that would be it. The only place where one could hope to make a difference. A darkness has swept over this land for centuries. "
-		"A corruption that turns beasts, men and all life into a wicked and tormented form of exsistence. The elders say it was all started by very powerful Channelers called The Dark Liches. If that "
-		"is the case though it is already far out of their controll. No one really knows however, it could simply be that the gods have grown tired of this mortal plane...\n\nPondering this question your "
+		"A corruption that turns beasts, men and all life into a wicked and tormented form of existence. The elders say it was all started by very powerful Channelers called The Dark Liches. If that "
+		"is the case though it is already far out of their control. No one really knows however, it could simply be that the gods have grown tired of this mortal plane...\n\nPondering this question your "
 		"feet starts to drag, you're closing your limit. But just as thoughts of giving up start entering your mind, you can make out tall stone walls in the distance. As you move closer the guards "
 		"on top of the wall notices you. They all aim different ranged weaponry at you, all the way from bows to powerful ancient boomsticks. They watch intently as you approach. Eventually, they "
 		" stand down. Most likely assessing that you have no mutations. After a while the gate opens and a tall muscular man with a long ornate cloak approach and address you.", false, false, false, 39);
@@ -84,7 +84,7 @@ void Intro()
 		}
 		if (input == '3')
 		{
-			Paragraph(&hero, "Nightblades prefeer the shadows, often using channeling to enhance their attacks and enchant their blades.\n-No stat focus\n-Bonus to initiative\n-Can wear cloth and leather\n-Keybindings: \'q\'-Ambush, \'w\'-Poison Strike, \'e\'-Enchant Weapon, \'r\'-Devastating Strike\n", false, false, false, 0);
+			Paragraph(&hero, "Nightblades prefer the shadows, often using channeling to enhance their attacks and enchant their blades.\n-No stat focus\n-Bonus to initiative\n-Can wear cloth and leather\n-Keybindings: \'q\'-Ambush, \'w\'-Poison Strike, \'e\'-Enchant Weapon, \'r\'-Devastating Strike\n", false, false, false, 0);
 			if (Question(&hero, "Are you sure that you want to be a Nightblade?"))
 			{
 				hero.classSet("Nightblade");
@@ -102,14 +102,14 @@ void Intro()
 				StarterWeapon.idTransform(36);
 				hero.equipWeapon(&StarterWeapon);
 
-				Hadgar.Talk(&hero, "So you prefeer the shadows? The nights have grown long and full of terrors. I'm sure you will feel right at home. *He gives a short chuckle*", false, false, true, 39);
+				Hadgar.Talk(&hero, "So you prefer the shadows? The nights have grown long and full of terrors. I'm sure you will feel right at home. *He gives a short chuckle*", false, false, true, 39);
 			}
 			else
 				input = 0;
 		}
 		if (input == '4')
 		{
-			Paragraph(&hero, "Monks study ancient martial techniques to master close quarter combat. -Agility focus\n-Quick actions\n-Ki(Mana regens between each fight)\n-Can wear cloth and leather\n-Keybindings: \'q\'-Quick Attack, \'w\'-Dodge, \'e\'-Stunning Strike\n", false, false, false, 0);
+			Paragraph(&hero, "Monks study ancient martial techniques to master close quarter combat. \n-Agility focus\n-Quick actions\n-Ki(Mana regens between each fight)\n-Can wear cloth and leather\n-Keybindings: \'q\'-Quick Attack, \'w\'-Dodge, \'e\'-Stunning Strike\n", false, false, false, 0);
 			if (Question(&hero, "Are you sure that you want to be a Monk?"))
 			{
 				hero.classSet("Monk");
@@ -125,7 +125,7 @@ void Intro()
 				StarterWeapon.idTransform(36);
 				hero.equipWeapon(&StarterWeapon);
 				
-				Hadgar.Talk(&hero, "You walk the nameless path? We are honored to welcome you within our walls.", false, false, true, 39);
+				Hadgar.Talk(&hero, "\nYou walk the nameless path? We are honored to welcome you within our walls.", false, false, true, 39);
 			}
 			else
 				input = 0;
@@ -135,11 +135,11 @@ void Intro()
 	Hadgar.Talk(&hero, "I wanted to welcome you personally, but I am currently re-organizing the city's defences so you will have to excuse me. Please explore the city freely, and then come speak to me if you want to "
 		"contribute to our continued survival. In any case you are free to stay here as long as the city does, the barracks are open to you if you need lodgings. They lay just east of the castle, you can't miss it.   \n\n"
 		"Hadgar gives you a smile and a nod, and then returns through the gate. You are left to your own devices. \n\nLarge stone walls encompass the entire city, as well as another smaller set of walls around the castle in the center. Almost everything towers in blinding white and the size of it all leaves you breathless. "
-		"You've never seen anything like it before. It's not suprising that the city still stands.", false, false, false, 39);
+		"You've never seen anything like it before. It's not surprising that the city still stands.", false, false, false, 39);
 
 	Paragraph(&hero, "\nThe amount of people is staggering, being a wanderer your whole life you have never seen more than a dozen people gathered, but here in the middle of the city there "
 		"are hundreds of people going about their day. Thousands must live within these walls. After taking a moment, you gather yourself and decide to "
-		"head out and see what other experiences this city has in store. \n\nWhat immediately grabs your attention is the fighting pits. It stands right in the middle of the town square. It's full of people fighting both mutants and eachother. There even "
+		"head out and see what other experiences this city has in store. \n\nWhat immediately grabs your attention is the fighting pits. It stands right in the middle of the town square. It's full of people fighting both mutants and each other. There even "
 		"seems to be a system of retractable bar walls to section off the fighting pits so that multiple fights can happen at the same time. And they are currently making good "
 		"use of it. It seems to be the perfect place to hone your skills.", false, false, true, 39);
 

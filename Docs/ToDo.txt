@@ -90,9 +90,14 @@ Skips messages at times															- Fixed, or very rare
 Quick action is broken, counts as a normal action								- Fixed
 Tavern returns you to Tyria at any selection									- Fixed
 Combat clears if enemy attacks before you in first round of combat				- Fixed
+Sometimes you have to double press "Enter" to continue							- Fixed
+Sometimes it skips through dialogue without a prompt(^Same error?)				- Fixed
+Combat spacing is off when companions are involved.								- Fixed
+Numpad +/- no longer works?
 Enemies sometimes attack after dying?
-Combat spacing is off when companions are involved.
-		
+Enemies attack twice? Maybe after missing?
+Can't type 0 when buying an amount of something to cancel
+
 To finish:
 Main story 				- 80%
 Balancing stats 		- 90%
@@ -101,3 +106,4 @@ Consolidating Code		- 90%
 Think of:
 Should all text be slow scroll for the first time you see it?
 Rethink spell descriptions, add flexibility for enemy casters
+Make mana colors different, blue might be too dark for some screens

@@ -168,10 +168,10 @@ void Companion::Attack(Player* hero)
 		damage *= 1.5;
 	}
 	hero->Opponent[random].healthMod(-damage);
-	mvprintw(hero->yPosGet(), 0, "\n%s hits %s for %i health", Name.c_str(), hero->Opponent[random].nameGet().c_str(), damage);
+	mvprintw(hero->yPosGet(), 0, "%s hits %s for %i health", Name.c_str(), hero->Opponent[random].nameGet().c_str(), damage);
 	printw("! (%i/%i", hero->Opponent[random].healthGet(), hero->Opponent[random].maxHealthGet());
 	ColoredString(" hp", HealthColorCode(&hero->Opponent[random]));
-	printw(")"); hero->yPosAdd(2);
+	printw(")\n"); hero->yPosAdd(2);
 
 	SleepC(1000);
 }

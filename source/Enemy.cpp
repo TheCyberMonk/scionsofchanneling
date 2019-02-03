@@ -255,7 +255,7 @@ void Enemy::Attack(Player* hero)
 		}
 		else 
 		{ 
-			printw("%s", target->nameGet().c_str()); 
+			printw("%s", target->nameGet().c_str());
 		}
 		printw(", but misses!");
 	}

@@ -119,6 +119,7 @@ bool LichHideout(Player* hero)
 						return false;
 					Paragraph(&*hero, "You stand triumphant! Corpses of the channelers lay littered before you, the mission is acomplished. Returning to Tyria you are welcomed as A HERO. And for once the town is buzzing with life and hope as the celebration continues well into the next day.", true, true, true, 45);
 					Paragraph(&*hero, "End of current game development.\nThanks for playing!", true, true, true, 0);
+					hero->stageSet(8, false);
 					return true;
 				}
 				if (choice1 == '9')

@@ -636,14 +636,14 @@ void Tavern(Player* hero)
 					{
 						hero->varSet(97, 1);
 						Paragraph(&*hero, "There are two types of deities in this world.\nThe Ayans, the immortals and The Davas, the creators. "
-							"\n\nAyans are said to be beings from another plane of existance. \nTrancending their mortal bodies a long time "
+							"\n\nAyans are said to be beings from another plane of existence. \nTrancending their mortal bodies a long time "
 							"ago. There are very few of them left, most gave up their immortality to be able to directly interact with the "
 							"mortal world and became part of The Davas. A guard also jokingly added a comment about boredom. They are omnipresent "
 							"beings. Unable to act directly, they instead pull the threads of fate to their will. In old times powerful channelers "
 							"found a way to communicate with The Ayans, but the means to do so has been lost. "
 							"\n\nThe Davas created this world tens of thousands of years ago. \nOnce Ayans, they gave up their immortality for "
 							"the power to create and take physical form. It is not known if any of the worldbuilders still live, few live beyond "
-							"a thousand years. Most of them have vastly different ideology, so strife between Davas is not an uncommon occurence.\n", true, true, true, 39);
+							"a thousand years. Most of them have vastly different ideology, so strife between Davas is not an uncommon occurrence.\n", true, true, true, 39);
 					}
 					else if (hero->varGet(97) == 1)
 					{
@@ -882,19 +882,52 @@ bool Pits(Player* hero)
 }
 void Channeler(Player* hero)
 {
+	Being Ezar("Ezar", "Channeler Master", "NPC", 10, 50, 100, 5, 15, 5, 100, 200);
+
 	printw("\n\n");
-	if (hero->stageGet(10))	//If they've been here before without unlocking the door.
+	if (hero->stageGet(10) && !hero->stageGet(11))	//If they've been here before without unlocking the door.
 	{
 		Paragraph(&*hero, "You return to the mysterious symbol, contemplating if you should try to activate it. "
 			"You study it again, and it confirms what you recall. "
 			"The spell to activate the symbol requires life essence to be channeled into it. "
-			"But you can only guess at what might happen then...\n\n", false, false, false, 39);
+			"But you can only guess at what might happen then...\n\n", false, false, false, 45);
 		if (Question(&*hero, "Go ahead?"))
 		{
 			if (hero->levelGet() >= 4)
 			{
-				//Get access to the Channelers Hideout
 				hero->stageSet(11, false);
+
+				Paragraph(&*hero, "The ethcing lights up, and the patterns unravel forming a large circle on the wall. "
+					"The circle flashes for a moment and completely phases out revealing a hole in the wall. "
+					"Through the opening you can see a poorly lit wide open room with marble pillars. "
+					"Your curiosity has already gotten you this far, so stepping through the circle in the wall you enter the room. "
+					"As you walk down the line of pillars you see cloaked figures move from behind them. "
+					"One of them approaches you and pulls down his hood, he is a bald middle aged man with a long flowing beard. "
+					"Along his scalp is a winding tattoo of the trunk of a tree and the roots stretch down into his face covering his eyes and nose. "
+					"He meets your gaze and adresses you.", true, false, false, 45);
+
+				Ezar.Talk(hero, "I see the etchings of power has found someone with potential. "
+					"We are the true power of the bastion of humanity though they do not accept us as such. "
+					"The channeling of essence may have destroyed this world, but used correctly it can also save it. "
+					"If you share this belief we may benefit eachother greatly. ", false, false, false, 45);
+				if (Question(&*hero, "Do you see value in this adventurer?"))
+				{
+					hero->stageSet(18, false); // Joined the channelers guild
+					Ezar.Talk(hero, "Then follow me, we have many a thing to discuss", false, true, true, 45);
+					Paragraph(&*hero, "He leads you through the hallway. While doing so the other hooded figures disappears back into the shadows, "
+						"like they were never there. As you walk towards the door at the other side, about halfway there you hit some sort of barrier. "
+						"You almost fumble backwards as you crash into it, but Ezar lays a hand on your back and pushes you through the field. "
+						"As you pass through the hallway behind you completely disappears, was it even real or just an illusion? "
+						"In front of you is what looks like an old reinhabited castle. There's many tables set up in an open room "
+						"with various functions and channelers walking back and forth everywhere. It almost looks like a throne room, "
+						"but the throne has been removed and in the platform where it once was is a large purple glowing orb. "
+						"END OF CURRENT CONTENT ON THIS QUEST", false, false, true, 45);
+				}
+				else
+				{
+					Ezar.Talk(hero, "Then leave us and bother us no further, if you decide to share this little secret. "
+						"We have many a ways to snuff out a young adventurer like you.", false, true, true, 45);
+				}
 			}
 			else
 			{
@@ -902,14 +935,14 @@ void Channeler(Player* hero)
 				Paragraph(&*hero, "\nImmediatly as you begin channeling, you realize something is wrong. "
 					" The life force you were channeling slips away from you, and you collapse to your knees. "
 					"After a few moments you collect yourself, but you still feel drained. "
-					"While walking away you wonder what that was all about...", false, true, true, 39);
+					"While walking away you wonder what that was all about...", false, true, true, 35);
 				hero->healthMod(-1);
 			}
 		}
 		else
 		{
 			Paragraph(&*hero, "\nYou decide against activating the symbol. "
-				"Some things are better left unanswered.", false, false, true, 39);
+				"Some things are better left unanswered.", false, false, true, 35);
 		}
 		return;
 	}
@@ -917,20 +950,34 @@ void Channeler(Player* hero)
 	{
 		hero->stageSet(10, false);
 		Paragraph(&*hero, "As you search the large city you come upon an etching on one of the stone walls. "
-			"The etching is compromised of numerous geometrical shapes interwining in intricate patterns. "
-			"You have no idea what it's supposed to mean.\n\n", false, false, false, 39);
+			"The etching is compromised of numerous geometrical shapes intertwining in intricate patterns. "
+			"You have no idea what it's supposed to mean.\n\n", false, false, false, 35);
 	}
 	if (!hero->stageGet(11))
 	{
 		Paragraph(&*hero, "You recognize part of the etching as the symbol of life essence that is used in channeling magic. "
 			"If you channeled some of your own essence into the symbol it would activate the spell. "
-			"But you can only guess at what might happen then...\n\n", false, false, false, 39);
+			"But you can only guess at what might happen then...\n\n", false, false, false, 35);
 		if (Question(&*hero, "Go ahead?"))
 		{
 			if (hero->levelGet() >= 4)
 			{
-				//Get access to the Channelers Hideout
 				hero->stageSet(11, false);
+
+				Paragraph(&*hero, "The ethcing lights up, and the patterns unravel forming a large circle on the wall. "
+					"The circle flashes for a moment and completely phases out revealing a hole in the wall. "
+					"Through the opening you can see a poorly lit wide open room with marble pillars. "
+					"Your curiosity has already gotten you this far, so stepping through the circle in the wall you enter the room. "
+					"As you walk down the line of pillars you see cloaked figures move from behind them. "
+					"One of them approaches you and pulls down his hood, he is a bald middle aged man with a long flowing beard. "
+					"Along his scalp is a winding tattoo of the trunk of a tree and the roots stretch down into his face covering his eyes and nose. "
+					"He meets your eyes and adresses you.", true, false, false, 39);
+
+				Ezar.Talk(hero, "I see the etchings of power has found someone with potential. "
+					"We are the true power of the bastion of humanity though they do not accept us as such. "
+					"The channeling of essence may have destroyed this world, but used correctly it can also save it. "
+					"If you share this belief we may benefit eachother greatly. "
+					"Leave us for now, and return if you see the value of this.", false, false, true, 39);
 			}
 			else
 			{
@@ -947,6 +994,10 @@ void Channeler(Player* hero)
 			Paragraph(&*hero, "\nYou find the prospect of tempering with unkown magic quite hazardous. "
 				"And atleast for now, you decide to leave it alone.", false, false, true, 39);
 		}
+	}
+	else if (hero->stageGet(11))
+	{
+		Paragraph(&*hero, "Channelers hideout yet to be developed, stay tuned!", false, false, true, 0);
 	}
 }
 bool Explore(Player* hero)
@@ -998,7 +1049,7 @@ bool Explore(Player* hero)
 		{
 			hero->stageSet(14, false);
 			Paragraph(&*hero, "You hear some loud ruckus and the sweet tunes of a panflute coming from a nearby building, you can assume that it's the local tavern. Suddenly the music cuts out and you can hear "
-				"lots of crashing noices coming from the tavern.\n", false, false, false, 39);
+				"lots of crashing noises coming from the tavern.\n", false, false, false, 39);
 			if (Question(&*hero, "Join the brawl?"))
 			{
 				if (!BattleGroup(hero, 3, 0, 1))
@@ -1026,7 +1077,7 @@ bool Explore(Player* hero)
 				Paragraph(&*hero, "You stand in front of the vendor to try and talk the robber down, but he is very on edge and jumps at you!", false, false, true, 39);
 				if (!BattleGroup(hero, 1, 101, 3))
 					return false;
-				Paragraph(&*hero, "The vendor is overjoyed by you saving his livelyhood and offers as much gold as he can spare as compensation. You receive 20 gold!", false, false, true, 39);	//Add option to decline?
+				Paragraph(&*hero, "The vendor is overjoyed by you saving his livelihood and offers as much gold as he can spare as compensation. You receive 20 gold!", false, false, true, 39);	//Add option to decline?
 				hero->goldMod(20);
 			}
 			else
@@ -1084,8 +1135,8 @@ bool Explore(Player* hero)
 		else if (chance > 95 && chance <= 100)
 		{
 			Paragraph(&*hero, "Turning around a corner you bump into two slim looking individuals, they half-heartedly apologize and move on. A moment later you realize "
-				"that one of your gold pouches is missing.\n\n\n", false, false, false, 39);
-			if (Question(-1, -1, "Chase after them?", false))
+				"that one of your gold pouches is missing.\n", false, false, false, 39);
+			if (Question(&*hero, "Chase after them?"))
 			{
 				int d20 = rand() % 20 + 1 + hero->agilityGet();
 				if (d20 >= 15)
@@ -1099,7 +1150,7 @@ bool Explore(Player* hero)
 					return true;
 				}
 				else
-					Paragraph(&*hero, "\nYou try to chase after them, but you're not able to keep up at all, they turn down an alleyway and almost dissapears in their haste.", false, false, false, 39);
+					Paragraph(&*hero, "\nYou try to chase after them, but you're not able to keep up at all, they turn down an alleyway and almost disappears in their haste.", false, false, false, 39);
 			}
 			else
 				Paragraph(&*hero, "\nYou decide a little money is no reason to kick up a fuss, they probably need it more than you anyway.", false, false, false, 39);
@@ -1113,7 +1164,7 @@ bool Explore(Player* hero)
 			return true;
 		}
 	}
-	Paragraph(&*hero, "You find nothing new nor does aything really happen, you just have a nice little walk around the city. Greeting a few familiar faces as you do.", false, true, true, 39);
+	Paragraph(&*hero, "You find nothing new nor does anything really happen, you just have a nice little walk around the city. Greeting a few familiar faces as you do.", false, true, true, 39);
 	return true;
 }
 bool Castle(Player* hero)
@@ -1133,7 +1184,7 @@ bool Castle(Player* hero)
 
 		if (input == '1')
 		{
-			Guard.Talk(&*hero, "The King does not currently recieve any audiences from the common people. No admittance!", false, false, true, 39);
+			Guard.Talk(&*hero, "The King does not currently receive any audiences from the common people. No admittance!", false, false, true, 39);
 		}
 		if (input == '2')
 		{
@@ -1151,7 +1202,7 @@ bool Castle(Player* hero)
 					hero->stageSet(1, false);
 					Hadgar.Talk(&*hero, "I'm glad to hear it! *He pauses for a moment* Unfortunately, I have an urgent problem to deal with. The mutant bandits have become "
 						"rather ferocious in their attacks. So I can't see to you personally at this time. Tell you what, there's going to be a tournament held at the fighting pits. "
-						"Why don't you join? It would be advantagous to know what your skills in combat are before sending you off on any missions, and it's a valuable experience. ", false, false, false, 39);
+						"Why don't you join? It would be advantageous to know what your skills in combat are before sending you off on any missions, and it's a valuable experience. ", false, false, false, 39);
 					Hadgar.Talk(&*hero, "You will need some better equipment. Here, buy some with this, 30 gold pieces should be enough. Take some time to train in the pits before you enter."
 						" And talk to me again when the tournament is over. Then we can begin discussing your future.", false, false, true, 39);
 					hero->goldMod(30);
@@ -1199,7 +1250,7 @@ bool Castle(Player* hero)
 			else if (!hero->stageGet(0))
 				Paragraph(&*hero, "After asking some guards you learn that the military commander is very busy attending strategic meetings. But he should be available tomorrow morning.\n", false, false, true, 0);
 			else
-				Paragraph(&*hero, "After asking some guards you learn that the military commander is currently unavailible", false, false, true, 0);
+				Paragraph(&*hero, "After asking some guards you learn that the military commander is currently unavailable", false, false, true, 0);
 		}
 	}
 	return true;

@@ -71,12 +71,12 @@ int main()
 			printw("\nCredits", '-');
 			printw("\n");
 			printw("\nMain Developer:");
-			printw("\nAsle Vestly Andersen\n");
+			printw("\nTheCyberMonk\n");
 			printw("\nWorld Building:");
-			printw("\nAsle Vestly Andersen");
-			printw("\nThomas Vestly Andersen\n");
+			printw("\nTheCyberMonk");
+			printw("\nAyatoma\n");
 			printw("\nPlay Testing:");
-			printw("\nThomas Vestly Andersen");
+			printw("\nAyatoma");
 			printw("\nStephen Bonnefoy\n\n\n");
 			Pause();
 		}

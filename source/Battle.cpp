@@ -126,7 +126,11 @@ bool BattleGroup(Player* hero, int number, int difficulty, int battleType)
 		if (hero->maxManaGet() > 0)
 		{
 			mvprintw(hero->yPosGet(), 18, "%i/%i", hero->manaGet(), hero->maxManaGet());  hero->yPosAdd(1);
-			ColoredString(" MP\n", ManaColorCode(hero));
+			
+			if (hero->classGet() == "Monk")
+				ColoredString(" Ki\n", KiColorCode(hero));
+			else
+				ColoredString(" MP\n", ManaColorCode(hero));
 		}
 		printw("\n"); hero->yPosAdd(1);
 
@@ -161,6 +165,9 @@ bool BattleGroup(Player* hero, int number, int difficulty, int battleType)
 		mvprintw(5, 28, "9. Run");
 		mvprintw(6, 28, ">");
 
+		while (kbhit())
+			getch();
+
 		//move(7, 0);
 		hero->yResetSet(7);
 		hero->yPosAdd(2);
@@ -169,7 +176,7 @@ bool BattleGroup(Player* hero, int number, int difficulty, int battleType)
 			if (beingPointer[i]->healthGet() > 0)
 			{
 				bool stunned = false;
-				for (int j = 0; j < MAX_EFFECTS; j++)
+				for (int j = 0; j < MAX_EFFECTS; j++)	//EFFECT HANDLING
 				{
 					if (beingPointer[i]->getEffect(j)->nameGet() != "NULL")
 						beingPointer[i]->getEffect(j)->modTime(beingPointer[i], &*hero, -1);
@@ -221,7 +228,7 @@ bool BattleGroup(Player* hero, int number, int difficulty, int battleType)
 					SleepC(1500);
 				}
 
-				if (hero->healthGet() <= 0)
+				if (hero->healthGet() <= 0) //GAME OVER(?)
 				{
 					if (battleType == 0 || battleType == 3)
 					{
@@ -231,7 +238,7 @@ bool BattleGroup(Player* hero, int number, int difficulty, int battleType)
 					}
 					else
 					{
-						mvprintw(hero->yPosGet(), 0, "You are knocked unconcious!"); hero->yPosAdd(2);
+						mvprintw(hero->yPosGet(), 0, "You are knocked unconscious!"); hero->yPosAdd(2);
 						Pause(); Clear(&*hero);
 					}
 
@@ -242,9 +249,9 @@ bool BattleGroup(Player* hero, int number, int difficulty, int battleType)
 					return false; //Perma death, for now?
 				}
 
-				for (int j = 0; j < FOLLOWER_LIMIT; j++)
+				for (int j = 0; j < FOLLOWER_LIMIT; j++) 
 				{
-					if (hero->Party[j].nameGet() != "NULL")
+					if (hero->Party[j].nameGet() != "NULL") //COMPANION DEATHS(?)
 					{
 						if (hero->Party[j].healthGet() <= 0 && hero->Party[j].nameGet() == "Gerald" && !hero->Party[j].Unconscious)
 						{
@@ -261,7 +268,7 @@ bool BattleGroup(Player* hero, int number, int difficulty, int battleType)
 						}
 					}
 				}
-				if (CombatOver(hero))
+				if (CombatOver(hero)) //ENDING COMBAT
 				{
 					if (hero->classGet() == "Monk")
 						hero->manaSet(hero->maxManaGet());

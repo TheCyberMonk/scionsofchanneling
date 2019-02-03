@@ -39,11 +39,22 @@ int kbhit(void)    /* comment */
 }
 void Pause()
 {
-	flushinp(); //Clears input buffer so player doesn't accidentally skip
+	//flushinp(); //Clears input buffer so player doesn't accidentally skip
+	while (kbhit())
+		getch();
+
 	printw("Press ENTER to continue...");
+	getch();
 	refresh();
-	cin.sync();
-	cin.ignore();
+}
+void Pause(Being* hero)
+{
+	while (kbhit())
+		getch();
+
+	mvprintw(hero->yPosGet(), 0, "Press ENTER to continue...");
+	getch();
+	refresh();
 }
 void Clear(Being* hero)
 {
@@ -173,11 +184,14 @@ void Paragraph(Being* hero, string text, bool cls1, bool cls2, bool pause, int s
 
 	if (pause)
 	{
-		printw("\n\n");
+		printw("\n\n"); hero->yPosAdd(3);
 		Pause();
 	}
 	if (cls2)
+	{
 		clear();
+		hero->yPosReset();
+	}
 
 	while (kbhit()) 
 		getch();
@@ -212,6 +226,13 @@ int ManaColorCode(Being* being)
 		return 4;
 	else
 		return 5;
+}
+int KiColorCode(Being* being)
+{
+	if (being->manaGet() >= being->maxManaGet() / 3)
+		return 5;
+	else
+		return 6;
 }
 void HealthOutput(Player* hero, Being* being)
 {
@@ -348,14 +369,14 @@ bool Question(int y, int x, string question, bool clearr)
 		clear();
 
 	int answer = ' ';
-	while (answer != 'y' && answer != 'Y' && answer != '+' && answer != 'n' && answer != 'N' && answer != '-')
+	while (answer != 'y' && answer != 'Y' && answer != '+' && answer != 'n' && answer != 'N' && answer != '-' && answer != 43)
 	{
 		mvprintw(y, x, "%s(y/n|+/-)", question.c_str());
 		mvprintw(y+1, x, ">");
 		answer = getch();
 	}
 
-	if (answer == 'Y' || answer == 'y' || answer == '+')
+	if (answer == 'Y' || answer == 'y' || answer == '+' || answer == 43)
 		return true;
 	if (answer == 'N' || answer == 'n' || answer == '-')
 		return false;
@@ -363,14 +384,14 @@ bool Question(int y, int x, string question, bool clearr)
 bool Question(Being* hero, string question)
 {
 	int answer = ' ';
-	while (answer != 'y' && answer != 'Y' && answer != '+' && answer != 'n' && answer != 'N' && answer != '-')
+	while (answer != 'y' && answer != 'Y' && answer != '+' && answer != 'n' && answer != 'N' && answer != '-' && answer != 43)
 	{
 		mvprintw(hero->yPosGet(), 0, "%s(y/n|+/-)", question.c_str());
 		mvprintw(hero->yPosGet() + 1, 0, ">");
 		answer = getch();
 	}
 	hero->yPosAdd(2);
-	if (answer == 'Y' || answer == 'y' || answer == '+')
+	if (answer == 'Y' || answer == 'y' || answer == '+' && answer != 43)
 		return true;
 	if (answer == 'N' || answer == 'n' || answer == '-')
 		return false;
@@ -380,7 +401,7 @@ bool Question(Being* hero, string question)
 
 
 static int increment = 0;
-void Options(Player* hero)
+void Menu(Player* hero)
 {
 	int choice = 99;
 
@@ -390,8 +411,9 @@ void Options(Player* hero)
 		printw("1. Display status\n");
 		printw("2. Use item\n");
 		printw("3. Use ability\n");
-		printw("4. Keybindings\n");
-		printw("5. Game Tips\n");
+		printw("4. Journal\n");
+		printw("5. Keybindings\n");
+		printw("6. Game Tips\n");
 		printw("7. Save Game\n");
 		printw("8. Load Game\n");
 		printw("9. New Game\n");
@@ -406,13 +428,16 @@ void Options(Player* hero)
 		if (choice == '3')
 			hero->spellDisplay();
 		if (choice == '4')
+			Journal(hero);
+		if (choice == '5')
 			hero->setBinding();
 		if (choice == '7')
 			Save(hero, false);
 		if (choice == '8')
 		{
 			Clear(&*hero);
-			if (Question(&*hero, "You will lose any unsaved progress.\nAnd will be returned to Tyria upon loading.\nAre you sure?"))
+			Paragraph(&*hero, "You will loose any unsaved progress.\nAnd will be returned to Tyria upon loading.", false, false, false, 0);
+			if (Question(&*hero, "Are you sure?"))
 			{
 				hero->Reset();	//Is this needed and working correctly?
 				Load(hero);
@@ -420,14 +445,14 @@ void Options(Player* hero)
 		}
 		if (choice == '9')
 		{
-			Paragraph(&*hero, "You will lose any unsaved progress.", false, false, false, 0);
+			Paragraph(&*hero, "You will lose any unsaved progress.", true, false, false, 0);
 			if (Question(&*hero, "Are you sure you wish to start a new game?"))
 			{
 				hero->Reset();
 				Intro();
 			}
 		}
-		if (choice == '5')
+		if (choice == '6')
 		{
 			increment++;
 
@@ -510,7 +535,7 @@ int ChooseOption(string text, Player* hero, string choice[9], bool clearr)
 				return input;
 		}
 		if (input == '0')
-			Options(hero);
+			Menu(hero);
 
 		//CHEATS
 		if(input == '|')
@@ -1335,4 +1360,74 @@ bool EnemiesDead(Player* hero)
 	}
 	else
 		return false;
+}
+
+void Journal(Player* hero)
+{
+	//THOUGHT: Add dates to the game, that progresses each time the player takes a rest, and use those dates to append each entry for at what day it happened.
+	//BUT: That will require an addition to the save file system to remember it between saves.
+
+	Clear(&*hero);
+	if (!hero->stageGet(1))
+	{
+		Paragraph(&*hero, "I've just arrived here at Tyria, finally made it! I should take my time and explore a bit, there has to be many things to see in such a city. And after that I need to talk to Hadgar again at the Castle.\n", false, false, false, 10);
+	}
+	if (hero->stageGet(1))
+	{
+		Paragraph(&*hero, "I've arrived at Tyria! Finally found a home, and now a new purpose as I've accepted Hadgars call to join the cities defences. He said I should first attend the local tournament, so that he can gauge my skill in combat as well as it is a means for me to improve it.\n", false, false, false, 10);
+	}
+	if (hero->stageGet(2))
+	{
+		if (hero->varGet(1) == 10)
+		{
+			//Champion of the tournament
+			Paragraph(&*hero, "I've proved myself worthy and arisen as the champion of the tournament! I now need to report back to Hadgar with my victory.\n", false, false, false, 10);
+		}
+		if (hero->varGet(1) < 10 && hero->varGet(1) >= 5)
+		{
+			Paragraph(&*hero, "The tournament was a challenge, but I believe I have proven myself to be a skilled combatant. I need to report back to Hadgar with the results.\n", false, false, false, 10);
+		}
+		if (hero->varGet(1) < 5)
+		{
+			Paragraph(&*hero, "The tournament was a challenge, and I got knocked out in the earlier rounds. I can give it another go or report back to Hadgar with the results.\n", false, false, false, 10);
+		}
+	}
+	if (hero->stageGet(4)) //Finished the Defence of Tyria
+	{
+		Paragraph(&*hero, "The invasion of Tyria by invading mutant bandits have been fended off. I should take a well deserved rest and then yet again report back to Hadgar.\n", false, false, false, 10);
+	}
+	else if (hero->stageGet(3)) //About to head to defend Tyria
+	{
+		Paragraph(&*hero, "Hadgar has just told me about an invading force of Mutant bandits bearing down on the city! I must gather my wits and report to the barracks to help at once!\n", false, false, false, 10);
+	}
+	if (hero->stageGet(5))
+	{
+		Paragraph(&*hero, "I've been sent on a most vital mission, to purge a center of corruption for this seething blight. I've been directed to a location, where the desert meets the mountains.\n", false, false, false, 10);
+	}
+	if (hero->stageGet(6))
+	{
+		Paragraph(&*hero, "The journey has been rough, but I have finally made it to the congregation of these corrupted channelers.\n", false, false, false, 10);
+	}
+	if (hero->stageGet(7))
+	{
+		Paragraph(&*hero, "The channelers were nothing like what I thought, it seems we share a similar purpose. Even if they have very different means, we need to work together for now.\n", false, false, false, 10);
+	}
+	else if (hero->stageGet(8))
+	{
+		Paragraph(&*hero, "My mission has been complete, the deserts have been purged of this corrupted channeling and will hopefully in time recover. I was welcomed back as a hero, and I know in my heart I have found my true home.\n", false, false, false, 10);
+	}
+	if (hero->stageGet(10)) //Found the mysterious symbol
+	{
+		Paragraph(&*hero, "In the alleyways of Tyria I have found a mysterious symbol. It bares the symbol of life and seems to be calling for it. This needs further investigation, but I am wary of it.\n", false, false, false, 10);
+	}
+	if (hero->stageGet(11)) //Found the channelers hideout
+	{
+		Paragraph(&*hero, "I touched the mysterious symbol and some of my life was drained away, but just a little as if to sample it. The bricks of the alley folded backwards and revealed a hallway, where hooded figures greeted me to what they called \"The Channelers Hideout\"\n", false, false, false, 10);
+	}
+	if (hero->stageGet(15)) //Statue background lore unlocked
+	{
+		//Paragraph(&*hero, "Today I came upon a statue of Alissa the Swordsmaster, as a bystander informed me. He also told me of great deeds she did to lead her people here and to defend the city. It seems I owe a lot to this person.\n", false, false, false, 10);
+	}
+	hero->yPosAdd(1);
+	Pause(&*hero);
 }

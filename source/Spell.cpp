@@ -327,7 +327,7 @@ bool Spell::Cast(Player* hero, Being* caster, Being* target, bool Self, bool scr
 					{
 						if (target->getEffect(input - 49)->nameGet() != "NULL")
 						{
-							mvprintw(hero->yPosGet(), 0, "%s %s is Dispeled!\n", Chant.c_str(), target->getEffect(input - 49)->nameGet().c_str()); hero->yPosAdd(2);
+							mvprintw(hero->yPosGet(), 0, "%s %s is Dispelled!\n", Chant.c_str(), target->getEffect(input - 49)->nameGet().c_str()); hero->yPosAdd(2);
 							target->getEffect(input - 49)->Reset();
 							break;
 						}
@@ -465,7 +465,7 @@ void Spell::idTransform(int id)
 		"The caster focuses on the life energies within them, creating a sustained flow of positive energy.", 0, 1, 0.75, 0.5, 3, 3, 2);
 	if (id == 5)
 		spellSet(5, "Dispel", "Channeler", "Life", "Dispel", false, true,
-		"A spell which can be used to remove any staus effect from foe or friend alike. Quick action.",
+		"A spell which can be used to remove any status effect from foe or friend alike. Quick action.",
 		"The caster brings their attention to the effect, reading its magic. And then applying opposite forces to Dispel it.", 0, 0, 0, 0, 0, 1, 1);
 	if (id == 6)
 		spellSet(6, "Corruption", "Channeler", "Shadow", "-Effect", true, false,
@@ -478,7 +478,7 @@ void Spell::idTransform(int id)
 	if (id == 8)
 		spellSet(8, "Thunderstorm", "Channeler", "Thunder", "AoE", true, false,
 		"A lightning based damage spell which damages all your enemies.",
-		"The caster controlls the clouds and unleashes a cacophony of lightning strikes at its foes!", 2, 1, 0.5, 0.5, 0, 7, 3);
+		"The caster controls the clouds and unleashes a cacophony of lightning strikes at its foes!", 2, 1, 0.5, 0.5, 0, 7, 3);
 	if (id == 9)
 		spellSet(9, "Flame Haze", "Channeler", "Fire", "Damage", true, false,
 		"A fire based damage spell. It also applies a debuff that reduces the accuracy of the target, with a duration of 2 rounds.",
