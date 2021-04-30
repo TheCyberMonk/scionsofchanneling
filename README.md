@@ -27,3 +27,12 @@ Windows: https://github.com/TheCyberMonk/scionsofchanneling/raw/master/builds/wi
 Mac: https://github.com/TheCyberMonk/scionsofchanneling/raw/master/builds/mac/SoC%20V0.4.200.zip
 
 Linux: https://github.com/TheCyberMonk/scionsofchanneling/raw/master/builds/linux/SoC%20V0.4.200.zip
+
+# Linux Additional info
+If you're not able to launch the game and/or get the error "error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory". 
+Use these commands:
+1. sudo add-apt-repository universe
+2. sudo apt-get install libncurses5 libncurses5:i386
+3. "Navigate to the extracted folder"
+4. sudo chmod +x "Scions of Channeling"
+5. ./"Scions of Channeling"
