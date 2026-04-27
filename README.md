@@ -37,7 +37,7 @@ Use these commands:
 4. sudo chmod +x "Scions of Channeling"
 5. ./"Scions of Channeling"
 
-#Linux Update
+# Linux Update
 ncurses5 is outdated by now, but you can find legacy versions. 
 This is how I made it work on Debian
 
