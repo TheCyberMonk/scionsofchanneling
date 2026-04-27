@@ -52,4 +52,4 @@ dpkg -x libtinfo5_6.4-4_amd64.deb /tmp/ncurses5
 LD_LIBRARY_PATH=/tmp/ncurses5/lib/x86_64-linux-gnu "./Scions of Channeling"
 ```
 
-Just make sure to move the libraries away from /tmp/ and update the path. I guess you might need different library files if you're using an intel cpu as well. Anyways I'm not gonna research and update with anymore directions as I'm not sure anyone else will even see this x)
+Just make sure to move the libraries away from /tmp/ and update the path if you want to play again, or just use the whole code block each time. I guess you might need different library files if you're using an intel cpu as well. Anyways I'm not gonna research and update with anymore directions as I'm not sure anyone else will even see this x)
